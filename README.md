@@ -14,5 +14,7 @@ https://en.wikipedia.org/wiki/Maze_generation_algorithm
     2. Else if stack is not empty [X]
         1. Pop a cell from the stack [X]
         2. Make it the current cell [X]
-        
+
+
+# Maze Generation In Progress
 ![Alt text](./imgs/preview.png?raw=true "Output")
