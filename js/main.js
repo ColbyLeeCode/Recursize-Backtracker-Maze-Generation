@@ -114,6 +114,7 @@ function Cell(i, j) {
         
         if(this.visited)
         {
+            //draw walls
             if(this.walls[0])
                 lineBetween(x, y, x+w, y);
             if(this.walls[1])
@@ -122,10 +123,8 @@ function Cell(i, j) {
                 lineBetween(x+w, y+w, x, y+w);
             if(this.walls[3])
                 lineBetween(x, y+w, x, y);
-        }
-            
-        if(this.visited)
-        {
+
+            //fill visited tile
             ctx.fillStyle = "#8f2ac1";
             ctx.beginPath();
             ctx.fillRect(x, y, w, w);
