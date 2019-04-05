@@ -21,9 +21,9 @@ var cols, rows, w, grid, current, stack;
 this.window.addEventListener("load", init);
 
 function init() {
-    canvas.width = 800;
-    canvas.height = 800;
-    w = 40;
+    canvas.width = 1000;
+    canvas.height = 1000;
+    w = 10;
     cols = Math.floor(canvas.width / w);
     rows = Math.floor(canvas.height / w);
     grid = [];
@@ -111,15 +111,18 @@ function Cell(i, j) {
         var x = this.i * w;
         var y = this.j * w;
         ctx.strokeStyle = "#fff";
-               
-        if(this.walls[0])
-            lineBetween(x, y, x+w, y);
-        if(this.walls[1])
-            lineBetween(x+w, y, x+w, y+w);
-        if(this.walls[2])
-            lineBetween(x+w, y+w, x, y+w);
-        if(this.walls[3])
-            lineBetween(x, y+w, x, y);
+        
+        if(this.visited)
+        {
+            if(this.walls[0])
+                lineBetween(x, y, x+w, y);
+            if(this.walls[1])
+                lineBetween(x+w, y, x+w, y+w);
+            if(this.walls[2])
+                lineBetween(x+w, y+w, x, y+w);
+            if(this.walls[3])
+                lineBetween(x, y+w, x, y);
+        }
             
         if(this.visited)
         {
@@ -159,11 +162,9 @@ function render() {
     ctx.fillStyle = "#353c47";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.stroke();
-
     for (var i = 0; i < grid.length; i++) {
         grid[i].show();
-    }
-    
+    }   
     current.highlight();
 }
 
@@ -172,7 +173,6 @@ function gameUpdate() {
     step();
     render();
 }
-
 
 function removeWalls(a, b){
     var x = a.i - b.i;
