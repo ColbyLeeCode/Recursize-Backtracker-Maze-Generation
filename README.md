@@ -1,5 +1,5 @@
 # Recursize-Backtracker-Maze-Generation
-RECURSIVE BACKTRACKER MAZE GENERATION<br>
+RECURSIVE BACKTRACKER MAZE GENERATION (Vanilla JavaScript)<br>
 By: Colby Lee, 4/4/2019
 
 https://en.wikipedia.org/wiki/Maze_generation_algorithm
